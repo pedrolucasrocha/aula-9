@@ -1,0 +1,53 @@
+<div *ngIf="successMessage" class="success-message"> 
+  {{ successMessage }}
+</div>
+<div *ngIf="errorMessage" class="error-message"> 
+  {{ errorMessage }}
+</div>
+<div class="container">
+ <form>
+    <div>
+      <label>Id</label>
+      <input type="text" disabled [(ngModel)]="form_id" name="id">
+    </div>    
+    <div>
+      <label>Nome</label>
+      <input type="text" [(ngModel)]="form_nome_pessoa" name="nome_pessoa">
+    </div>    
+    <div>
+      <label>Telefone residencial</label>
+      <input type="text" [(ngModel)]="form_fone_res" name="fone_res">
+    </div>
+    <div>
+      <label>E-Mail</label>
+      <input type="text" [(ngModel)]="form_email_principal" name="email_principal">
+    </div>
+    
+    <button (click)="buttonClick()"> 
+      {{ form_id ? 'Salvar' : 'Criar' }}  
+    </button>
+  </form>  
+  <table>
+    <thead>
+      <th> Id </th>
+      <th> Nome </th>
+      <th> Telefone residencial </th>
+      <th> E-Mail </th>
+	  <th> ... </th>
+    </thead>  
+    <tbody>
+      <tr *ngFor="let pessoa of pessoas$ | async">
+        <td> {{ pessoa.id }} </td>
+        <td> {{ pessoa.nome_pessoa }} </td>
+        <td> {{ pessoa.fone_res }} </td>
+        <td> {{ pessoa.email_principal }} </td>
+        
+		    <td> 
+          <span (click)="preencherCampos(pessoa)" >alterar</span>
+          <span> - </span>
+          <span (click)="remover(pessoa.id!)" >remover</span> 
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

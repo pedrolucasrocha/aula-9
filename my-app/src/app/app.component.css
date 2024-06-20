@@ -1,0 +1,110 @@
+:host {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #2c3e50;
+}
+
+.container {
+  border-radius: 24px;
+  background: linear-gradient(145deg, #3a6073, #16222a);
+  padding: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container form {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.container form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  margin-right: 15px;
+}
+
+.container form div label {
+  color: #ecf0f1;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.container form div input {
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  outline: none;
+  padding: 8px;
+  font-size: 0.85rem;
+  background-color: #34495e;
+  color: #ecf0f1;
+}
+
+.container form div [name=id] {
+  color: #ecf0f1;
+}
+
+.container button {
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #e67e22;
+  padding: 10px 20px;
+  font-weight: 700;
+  width: 100%;
+  color: #ffffff;
+  transition: background-color 0.3s;
+}
+
+.container button:hover {
+  background-color: #d35400;
+}
+
+.container table {
+  margin-top: 40px;
+  width: 100%;
+  text-align: left;
+}
+
+.container table th {
+  color: #ecf0f1;
+  font-size: 0.85rem;
+  padding-bottom: 10px;
+}
+
+.container table td {
+  padding: 10px 0;
+  border-top: 1px solid #7f8c8d;
+  color: #ecf0f1;
+}
+
+.container table span {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #3498db;
+}
+
+.error-message,
+.success-message {
+  text-align: center;
+  font-weight: 600;
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.error-message {
+  background-color: #e74c3c;
+  color: #ffffff;
+}
+
+.success-message {
+  background-color: #27ae60;
+  color: #ffffff;
+}
